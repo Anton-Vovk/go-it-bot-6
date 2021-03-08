@@ -232,3 +232,93 @@ console.log(getUsersWithFriend(users, "Briana Decker"));
 console.log(getUsersWithFriend(users, ""));
 
 // ----------------------------21----------------------
+const getFriends = (users) => {
+  const allFriens = users.flatMap((user) => user.friends);
+  const uniqueFriends = allFriens.filter(
+    (user, index, friend) => friend.indexOf(user) === index
+  );
+  return uniqueFriends;
+};
+console.log(getFriends(users));
+
+// ----------------------------22----------------------
+const getActiveUsers = (users) => {
+  return users.filter((user) => user.isActive === true);
+};
+console.log(getActiveUsers(users));
+
+// ----------------------------23----------------------
+const getInactiveUsers = (users) => {
+  return users.filter((user) => user.isActive === false);
+};
+console.log(getInactiveUsers(users));
+
+// ----------------------------23----------------------
+const books = [
+  { title: "Последнее королевство", author: "Бернард Корнуэлл", rating: 8.38 },
+  { title: "На берегу спокойных вод", author: "Роберт Шекли", rating: 8.51 },
+  { title: "Сон смешного человека", author: "Федор Достоевский", rating: 7.75 },
+  { title: "Красна как кровь", author: "Ли Танит", rating: 7.94 },
+];
+const BOOK_TITLE = "Сон смешного человека";
+const AUTHOR = "Роберт Шекли";
+
+const bookWithTitle = books.find((book) => book.title === BOOK_TITLE);
+const bookByAuthor = books.find((book) => book.author === AUTHOR);
+console.log(bookWithTitle, bookByAuthor);
+
+// ----------------------------24----------------------
+const getUserWithEmail = (users, email) => {
+  return users.find((user) => user.email === email);
+};
+console.log(getUserWithEmail(users, "blackburndotson@furnigeer.com"));
+// ----------------------------25----------------------
+
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+
+const eachElementInFirstIsEven = firstArray.every((value) => value % 2 === 0);
+const eachElementInFirstIsOdd = firstArray.every((value) => value % 2 !== 0);
+
+const eachElementInSecondIsEven = secondArray.every((value) => value % 2 === 0);
+const eachElementInSecondIsOdd = secondArray.every((value) => value % 2 !== 0);
+
+const eachElementInThirdIsEven = thirdArray.every((value) => value % 2 === 0);
+const eachElementInThirdIsOdd = thirdArray.every((value) => value % 2 !== 0);
+
+console.log(eachElementInFirstIsEven); // true
+console.log(eachElementInSecondIsOdd); // true
+console.log(eachElementInThirdIsOdd); //false
+// every(callback) проверяет проходит ли все элементы массива тест 
+//предоставляемый коллбек - функцией.Возвращает true или false
+
+// ----------------------------26----------------------
+const isEveryUserActive = (users) => {
+   return users.every(user => user.isActive === true);
+};
+console.log(isEveryUserActive(users)); //false
+
+// ----------------------------27----------------------
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+
+const anyElementInFirstIsEven = firstArray.some(value=> value % 2 === 0);
+const anyElementInFirstIsOdd = firstArray.some(value => value % 2 !== 0);
+
+const anyElementInSecondIsEven = secondArray.some(value=> value % 2 === 0);
+const anyElementInSecondIsOdd = secondArray.some(value => value % 2 !== 0);
+
+const anyElementInThirdIsEven = thirdArray.some(value=> value % 2 === 0);
+const anyElementInThirdIsOdd = thirdArray.some(value => value % 2 !== 0);
+// some(callback) проверяет проходит ли хотя бы один элемент массива тест 
+//предоставляемый коллбек - функцией.Возвращает true или false
+
+// ----------------------------28----------------------
+const isAnyUserActive = users => {
+  return users.some(user => user.isActive === true );
+};
+
+// ----------------------------29----------------------
+
