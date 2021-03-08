@@ -151,14 +151,13 @@ import users from "./users.js";
 
 // ----------------------------13-14---------------------
 const getUserNames = (users) => {
-   return users.map((user) => user.name);
-}
+  return users.map((user) => user.name);
+};
 console.log(getUserNames(users));
 
-
-const getUserEmails = users => {
-    return users.map(user => user.email);
-  };
+const getUserEmails = (users) => {
+  return users.map((user) => user.email);
+};
 console.log(getUserEmails(users));
 
 // ----------------------------15----------------------
@@ -212,15 +211,24 @@ console.log(getUserEmails(users));
 
 // ----------------------------18----------------------
 const getUsersWithEyeColor = (users, color) => {
- return users.filter(user => user.eyeColor === color);
+  return users.filter((user) => user.eyeColor === color);
 };
-console.log(getUsersWithEyeColor(users, 'blue'));
+console.log(getUsersWithEyeColor(users, "blue"));
 
-// ----------------------------18----------------------
+// ----------------------------19----------------------
 const getUsersWithAge = (users, minAge, maxAge) => {
- 
-return users.filter(user => user.age > minAge && user.age < maxAge)
+  return users.filter((user) => user.age > minAge && user.age < maxAge);
 };
 console.log(getUsersWithAge(users, 20, 35));
 
-// ----------------------------19----------------------
+// ----------------------------20----------------------
+
+const getUsersWithFriend = (users, friendName) => {
+  return users
+    .filter((user) => user.friends.includes(friendName))
+    .map((user) => user);
+};
+console.log(getUsersWithFriend(users, "Briana Decker"));
+console.log(getUsersWithFriend(users, ""));
+
+// ----------------------------21----------------------
